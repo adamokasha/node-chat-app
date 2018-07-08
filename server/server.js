@@ -11,6 +11,6 @@ app.use(express.static(publicPath));
 //   res.send
 // });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Server up on port ${port}`);
 })
