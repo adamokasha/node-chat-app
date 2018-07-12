@@ -47,7 +47,7 @@ socket.on('updateUserList', function (users) {
 
 socket.on('newMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');
-  // call html() to get inenr html back
+  // call html() to get inner html back
   var template = $('#message-template').html();
   var html = Mustache.render(template, {
     text: message.text,
@@ -65,7 +65,6 @@ $('#message-form').on('submit', function (e) {
   var messageTextbox = $('[name=message]');
 
   socket.emit('createMessage', {
-    from: 'User',
     text: messageTextbox.val()
   }, function () {
     messageTextbox.val('')
